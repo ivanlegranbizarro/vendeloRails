@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  description: MyText
-  price: 9.99
+  title: Nintendo Switch
+  description: Una Nintendo Switch que funciona fantásticamente
+  price: 225.35
 
 two:
-  title: MyString
-  description: MyText
-  price: 9.99
+  title: PS4 PRO
+  description: La mejor versión de PS4. Funciona perfectamente
+  price: 150
