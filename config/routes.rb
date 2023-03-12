@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-  get "/products", to: "products#index"
-  get "/products/:id", to: "products#show", as: "product"
+  resources :products, only: [:index, :show, :new]
 end
