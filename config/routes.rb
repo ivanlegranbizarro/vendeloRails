@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :products, only: [:index, :show, :new]
+  resources :products, only: [:index, :show, :new, :create]
 end

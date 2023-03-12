@@ -15,7 +15,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_select ".description", "Una Nintendo Switch que funciona fantásticamente"
   end
 
-  test 'render the form to create a new product' do
+  test "render the form to create a new product" do
     get new_product_path
     assert_response :success
     assert_select "form" do
@@ -23,5 +23,12 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       assert_select "input[name='product[price]']"
       assert_select "textarea[name='product[description]']"
     end
+  end
+
+  test "create a new product" do
+    assert_difference "Product.count", 1 do
+      post products_path, params: { product: { title: "Nintendo Switch", price: 225.35, description: "Una Nintendo Switch que funciona fantásticamente" } }
+    end
+    assert_redirected_to products_path
   end
 end
