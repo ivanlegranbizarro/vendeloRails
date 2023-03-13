@@ -33,6 +33,16 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    if @product.destroyed?
+      redirect_to products_path, notice: "Product was successfully deleted."
+    else
+      redirect_to products_path, status: :unprocessable_entity, alert: "Product was not deleted."
+    end
+  end
+
   private
 
   def product_params
