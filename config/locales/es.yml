@@ -1,0 +1,53 @@
+es:
+  activerecord:
+    models:
+      product: "Producto"
+    attributes:
+      product:
+        title: "Título"
+        description: "Descripción"
+        price: "Precio"
+        image: "Imagen"
+  common:
+    confirm: "¿Estás seguro?"
+  products:
+    edit:
+      title: "Editar producto"
+    new:
+      title: "Añadir producto"
+    index:
+      title: "Productos"
+    create:
+      created: "El producto ha sido creado correctamente."
+      not_created: "El producto no ha podido ser creado."
+    update:
+      updated: "El producto ha sido actualizado correctamente."
+      not_updated: "El producto no ha podido ser actualizado."
+    destroy:
+      deleted: "El producto ha sido eliminado correctamente."
+      not_deleted: "El producto no ha podido ser eliminado."
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "debe ser aceptado"
+      blank: "no puede estar en blanco"
+      confirmation: "no coincide con la confirmación"
+      empty: "no puede estar vacío"
+      equal_to: "debe ser igual a %{count}"
+      even: "debe ser par"
+      exclusion: "está reservado"
+      greater_than: "debe ser mayor que %{count}"
+      greater_than_or_equal_to: "debe ser mayor o igual que %{count}"
+      inclusion: "no está incluido en la lista"
+      invalid: "no es válido"
+      less_than: "debe ser menor que %{count}"
+      less_than_or_equal_to: "debe ser menor o igual que %{count}"
+      not_a_number: "no es un número"
+      not_an_integer: "debe ser un número entero"
+      odd: "debe ser impar"
+      present: "debe estar en blanco"
+      taken: "ya ha sido tomado"
+      too_long: "es demasiado largo (máximo %{count} caracteres)"
+      too_short: "es demasiado corto (mínimo %{count} caracteres)"
+      wrong_length: "debe tener exactamente %{count} caracteres"
+      other_than: "debe ser diferente a %{value}"
