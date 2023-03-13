@@ -70,3 +70,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "ruby-lsp", "~> 0.4.1", :group => :development, :require => false
+
+gem "ruby-lsp", "~> 0.4.1", :group => :development, :require => false
