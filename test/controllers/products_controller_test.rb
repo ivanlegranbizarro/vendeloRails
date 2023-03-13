@@ -31,4 +31,16 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to products_path
   end
+
+  test "don't create a new product with invalid data" do
+    assert_no_difference "Product.count" do
+      post products_path, params: { product: { title: "", price: 225.35, description: "Una Nintendo Switch que funciona fantásticamente" } }
+    end
+    assert_response :unprocessable_entity
+    assert_select "form" do
+      assert_select "input[name='product[title]']"
+      assert_select "input[name='product[price]']"
+      assert_select "textarea[name='product[description]']"
+    end
+  end
 end
