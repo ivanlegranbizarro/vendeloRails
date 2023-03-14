@@ -1,10 +1,9 @@
 <%= turbo_frame_tag 'categories' do %>
   <h1><%= t('.title') %></h1>
   <%= form_with url: products_path, method: :get do |form| %>
-    <%= form.number_field :min_price, placeholder: t('.min_price'),
-    onkeypress: "if(event.keyCode == 13) { this.form.submit(); }", value: params[:min_price] %>
-    <%= form.number_field :max_price, placeholder: t('.max_price'),
-    onkeypress: "if(event.keyCode == 13) { this.form.submit(); }", value: params[:max_price] %>
+    <%= form.text_field :name, placeholder: t('products.form.pname'), onkeydown: "if(event.keyCode == 13) { this.form.submit(); }", value: params[:name] %>
+    <%= form.number_field :min_price, placeholder: t('.min_price'), onkeypress: "if(event.keyCode == 13) { this.form.submit(); }", value: params[:min_price] %>
+    <%= form.number_field :max_price, placeholder: t('.max_price'), onkeypress: "if(event.keyCode == 13) { this.form.submit(); }", value: params[:max_price] %>
   <% end %>
   <%= render 'shared/category', var: @categories %>
   <%= render partial: 'shared/product', collection: @products %>

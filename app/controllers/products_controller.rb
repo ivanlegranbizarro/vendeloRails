@@ -4,12 +4,15 @@ class ProductsController < ApplicationController
     @products = Product.all.with_attached_image.order(created_at: :desc).load_async
 
     @products = @products.where(category_id: params[:category_id]) if params[:category_id]
-
     @products = @products.where('price >= ?', params[:min_price]) if params[:min_price].present?
 
-    return unless params[:max_price].present?
+    @products = @products.where('price <= ?', params[:max_price]) if params[:max_price].present?
 
-    @products = @products.where('price <= ?', params[:max_price])
+    # Filtrar productos por nombre y descripción si el parámetro 'name' está presente
+    return unless params[:name].present?
+
+    search_term = "%#{params[:name].downcase}%"
+    @products = @products.where('LOWER(title) LIKE ? OR LOWER(description) LIKE ?', search_term, search_term)
   end
 
   def show

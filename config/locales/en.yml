@@ -47,6 +47,7 @@ en:
     new:
       title: "Add product"
     form:
+      pname: "Search product"
       title_placeholder: "What do you want to sell?"
       description_placeholder: "Could you describe your product?"
       price_placeholder: "For how much?"
