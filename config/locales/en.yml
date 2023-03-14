@@ -1,73 +1,97 @@
 en:
+  app_name: "SellIT"
+  meta_title: "Buy and sell second hand products!"
   activerecord:
     models:
-      product: "Product"
-      category: "Category"
+      product: Product
+      user: User
+      category: Category
     attributes:
       product:
         title: "Title"
         description: "Description"
         price: "Price"
-        image: "Image"
+        photo: "Photo"
+      user:
+        email: "Email"
+        username: "Username"
+        password: "Password"
       category:
         name: "Name"
   common:
     confirm: "Are you sure?"
-    back: "Back"
+    back: "Go back"
+    not_logged_in: "You have to login or create an account"
+    not_authorized: "You don not have permissions for this action"
+    not_found: "Not found"
+  shared:
+    header:
+      add: "Add product"
+      login: "Login"
+      register: "Register"
+      logout: "Logout"
+      favorites: "My favorites"
+  authentication:
+    users:
+      create:
+        created: "Your account has been created!"
+    sessions:
+      create:
+        created: "Welcome!"
+        failed: "Invalid login!"
+      destroy:
+        destroyed: "Session ended. Bye!"
   products:
     edit:
       title: "Edit product"
     new:
       title: "Add product"
+    form:
+      title_placeholder: "What do you want to sell?"
+      description_placeholder: "Could you describe your product?"
+      price_placeholder: "For how much?"
+      category_placeholder: "In what category could fit better?"
+      submit: "Sell it now!"
     index:
-      title: "Products"
+      title: "Products:"
+      all: "All"
+      min_price: "Min price"
+      max_price: "Max price"
+      query_text: "What do you want to search?"
+      expensive: "Expensive first"
+      cheapest: "Cheaper first"
+      newest: "Recently added"
+    show:
+      edit: "Edit product"
+      delete: "Delete product"
+      view_more_products: "View more products by %{username}"
     create:
-      created: "Product was successfully created."
-      not_created: "Product could not be created."
+      created: "Your product has been successfully created"
     update:
-      updated: "Product was successfully updated."
-      not_updated: "Product could not be updated."
+      updated: "Your product has been successfully updated"
     destroy:
-      deleted: "Product was successfully deleted."
-      not_deleted: "Product could not be deleted."
+      destroyed: "Your product has been successfully destroyed"
   categories:
-    edit:
-      title: "Edit category"
-    new:
-      title: "Add category"
+    category:
+      edit: "Edit"
+      delete: "Delete"
     index:
       title: "Categories"
+      new: "Add category"
+    edit:
+      title: "Edit category"
     create:
-      created: "Category was successfully created."
-      not_created: "Category could not be created."
+      created: "Your category has been successfully created"
     update:
-      updated: "Category was successfully updated."
-      not_updated: "Category could not be updated."
+      updated: "Your category has been successfully updated"
     destroy:
-      deleted: "Category was successfully deleted."
-      not_deleted: "Category could not be deleted."
-  errors:
-    format: "%{attribute} %{message}"
-    messages:
-      accepted: "must be accepted"
-      blank: "can't be blank"
-      confirmation: "doesn't match confirmation"
-      empty: "can't be empty"
-      equal_to: "must be equal to %{count}"
-      even: "must be even"
-      exclusion: "is reserved"
-      greater_than: "must be greater than %{count}"
-      greater_than_or_equal_to: "must be greater than or equal to %{count}"
-      inclusion: "is not included in the list"
-      invalid: "is invalid"
-      less_than: "must be less than %{count}"
-      less_than_or_equal_to: "must be less than or equal to %{count}"
-      not_a_number: "is not a number"
-      not_an_integer: "must be an integer"
-      odd: "must be odd"
-      present: "must be blank"
-      taken: "has already been taken"
-      too_long: "is too long (maximum is %{count} characters)"
-      too_short: "is too short (minimum is %{count} characters)"
-      wrong_length: "must be exactly %{count} characters"
-      other_than: "must be other than %{value}"
+      destroyed: "Your category has been successfully destroyed"
+    new:
+      title: "New category"
+  favorites:
+    index:
+      title: "My favorites"
+  user_mailer:
+    welcome:
+      subject: "Welcome to SellIT"
+      welcome_message: "Hey %{username}, welcome to SellIT. We hope you sell a lot!"

@@ -1,73 +1,97 @@
 es:
+  app_name: "Véndelo"
+  meta_title: "Compra y vende productos de segunda mano"
   activerecord:
     models:
-      product: "Producto"
-      category: "Categoría"
+      product: Producto
+      user: Usuario
+      category: Categoría
     attributes:
       product:
         title: "Título"
         description: "Descripción"
         price: "Precio"
-        image: "Imagen"
+        photo: "Foto"
+      user:
+        email: "Correo electrónico"
+        username: "Usuario"
+        password: "Contraseña"
       category:
         name: "Nombre"
   common:
     confirm: "¿Estás seguro?"
-    back: "Atrás"
+    back: "Volver"
+    not_logged_in: "Tienes que hacer login o crearte una cuenta"
+    not_authorized: "No tienes permisos para esta acción"
+    not_found: "No se ha encontrado"
+  shared:
+    header:
+      add: "Añadir producto"
+      login: "Acceso"
+      register: "Registro"
+      logout: "Salir"
+      favorites: "Mis favoritos"
+  authentication:
+    users:
+      create:
+        created: "Tu cuenta se ha creado!"
+    sessions:
+      create:
+        created: "Bienvenido!"
+        failed: "Login inválido!"
+      destroy:
+        destroyed: "Tu sesión ha terminado! Hasta la próxima"
   products:
     edit:
       title: "Editar producto"
     new:
-      title: "Agregar producto"
+      title: "Añadir producto"
+    form:
+      title_placeholder: "¿Qué quieres vender?"
+      description_placeholder: "¿Puedes describir el producto?"
+      price_placeholder: "¿Cuánto cuesta?"
+      category_placeholder: "¿En qué categoría encaja mejor?"
+      submit: "Véndelo!"
     index:
-      title: "Productos"
+      title: "Productos:"
+      all: "Todos"
+      min_price: "Precio mínimo"
+      max_price: "Precio máximo"
+      query_text: "¿Qué quieres buscar?"
+      expensive: "Más caros"
+      cheapest: "Más barato"
+      newest: "Añadidos recientemente"
+    show:
+      edit: "Editar producto"
+      delete: "Borrar producto"
+      view_more_products: "Ver más productos de %{username}"
     create:
-      created: "El producto se creó exitosamente."
-      not_created: "No se pudo crear el producto."
+      created: "Tu producto se ha creado correctamente"
     update:
-      updated: "El producto se actualizó exitosamente."
-      not_updated: "No se pudo actualizar el producto."
+      updated: "Tu producto se ha actualizado correctamente"
     destroy:
-      deleted: "El producto se eliminó exitosamente."
-      not_deleted: "No se pudo eliminar el producto."
+      destroyed: "Tu producto se ha eliminado correctamente"
   categories:
-    edit:
-      title: "Editar categoría"
-    new:
-      title: "Agregar categoría"
+    category:
+      edit: "Editar"
+      delete: "Borrar"
     index:
       title: "Categorías"
+      new: "Añadir categoría"
+    edit:
+      title: "Editar categoría"
     create:
-      created: "La categoría se creó exitosamente."
-      not_created: "No se pudo crear la categoría."
+      created: "Tu categoría se ha creado correctamente"
     update:
-      updated: "La categoría se actualizó exitosamente."
-      not_updated: "No se pudo actualizar la categoría."
+      updated: "Tu categoría se ha actualizado correctamente"
     destroy:
-      deleted: "La categoría se eliminó exitosamente."
-      not_deleted: "No se pudo eliminar la categoría."
-  errors:
-    format: "%{attribute} %{message}"
-    messages:
-      accepted: "debe ser aceptado"
-      blank: "no puede estar en blanco"
-      confirmation: "no coincide con la confirmación"
-      empty: "no puede estar vacío"
-      equal_to: "debe ser igual a %{count}"
-      even: "debe ser par"
-      exclusion: "está reservado"
-      greater_than: "debe ser mayor que %{count}"
-      greater_than_or_equal_to: "debe ser mayor o igual que %{count}"
-      inclusion: "no está incluido en la lista"
-      invalid: "es inválido"
-      less_than: "debe ser menor que %{count}"
-      less_than_or_equal_to: "debe ser menor o igual que %{count}"
-      not_a_number: "no es un número"
-      not_an_integer: "debe ser un número entero"
-      odd: "debe ser impar"
-      present: "no puede estar presente"
-      taken: "ya ha sido tomado"
-      too_long: "es demasiado largo (máximo %{count} caracteres)"
-      too_short: "es demasiado corto (mínimo %{count} caracteres)"
-      wrong_length: "debe tener exactamente %{count} caracteres"
-      other_than: "debe ser distinto de %{value}"
+      destroyed: "Tu categoría se ha eliminado correctamente"
+    new:
+      title: "Añadir categoría"
+  favorites:
+    index:
+      title: "Mis favoritos"
+  user_mailer:
+    welcome:
+      subject: "Bienvenido a Vendelo"
+      welcome_message: "Hey %{username}, bienvenid@ a Vendelo. Esperemos que vendas un montón!"
