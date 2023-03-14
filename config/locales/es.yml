@@ -2,30 +2,50 @@ es:
   activerecord:
     models:
       product: "Producto"
+      category: "Categoría"
     attributes:
       product:
         title: "Título"
         description: "Descripción"
         price: "Precio"
         image: "Imagen"
+      category:
+        name: "Nombre"
   common:
     confirm: "¿Estás seguro?"
+    back: "Atrás"
   products:
     edit:
       title: "Editar producto"
     new:
-      title: "Añadir producto"
+      title: "Agregar producto"
     index:
       title: "Productos"
     create:
-      created: "El producto ha sido creado correctamente."
-      not_created: "El producto no ha podido ser creado."
+      created: "El producto se creó exitosamente."
+      not_created: "No se pudo crear el producto."
     update:
-      updated: "El producto ha sido actualizado correctamente."
-      not_updated: "El producto no ha podido ser actualizado."
+      updated: "El producto se actualizó exitosamente."
+      not_updated: "No se pudo actualizar el producto."
     destroy:
-      deleted: "El producto ha sido eliminado correctamente."
-      not_deleted: "El producto no ha podido ser eliminado."
+      deleted: "El producto se eliminó exitosamente."
+      not_deleted: "No se pudo eliminar el producto."
+  categories:
+    edit:
+      title: "Editar categoría"
+    new:
+      title: "Agregar categoría"
+    index:
+      title: "Categorías"
+    create:
+      created: "La categoría se creó exitosamente."
+      not_created: "No se pudo crear la categoría."
+    update:
+      updated: "La categoría se actualizó exitosamente."
+      not_updated: "No se pudo actualizar la categoría."
+    destroy:
+      deleted: "La categoría se eliminó exitosamente."
+      not_deleted: "No se pudo eliminar la categoría."
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -39,15 +59,15 @@ es:
       greater_than: "debe ser mayor que %{count}"
       greater_than_or_equal_to: "debe ser mayor o igual que %{count}"
       inclusion: "no está incluido en la lista"
-      invalid: "no es válido"
+      invalid: "es inválido"
       less_than: "debe ser menor que %{count}"
       less_than_or_equal_to: "debe ser menor o igual que %{count}"
       not_a_number: "no es un número"
       not_an_integer: "debe ser un número entero"
       odd: "debe ser impar"
-      present: "debe estar en blanco"
+      present: "no puede estar presente"
       taken: "ya ha sido tomado"
       too_long: "es demasiado largo (máximo %{count} caracteres)"
       too_short: "es demasiado corto (mínimo %{count} caracteres)"
       wrong_length: "debe tener exactamente %{count} caracteres"
-      other_than: "debe ser diferente a %{value}"
+      other_than: "debe ser distinto de %{value}"

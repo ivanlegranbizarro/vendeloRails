@@ -2,14 +2,18 @@ en:
   activerecord:
     models:
       product: "Product"
+      category: "Category"
     attributes:
       product:
         title: "Title"
         description: "Description"
         price: "Price"
         image: "Image"
+      category:
+        name: "Name"
   common:
     confirm: "Are you sure?"
+    back: "Back"
   products:
     edit:
       title: "Edit product"
@@ -26,6 +30,22 @@ en:
     destroy:
       deleted: "Product was successfully deleted."
       not_deleted: "Product could not be deleted."
+  categories:
+    edit:
+      title: "Edit category"
+    new:
+      title: "Add category"
+    index:
+      title: "Categories"
+    create:
+      created: "Category was successfully created."
+      not_created: "Category could not be created."
+    update:
+      updated: "Category was successfully updated."
+      not_updated: "Category could not be updated."
+    destroy:
+      deleted: "Category was successfully deleted."
+      not_deleted: "Category could not be deleted."
   errors:
     format: "%{attribute} %{message}"
     messages:
