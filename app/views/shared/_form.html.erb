@@ -11,12 +11,16 @@
     <%= form.text_area :description %>
   </div>
   <div class="field">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+  <div class="field">
     <%= form.label :price %>
     <%= form.number_field :price %>
   </div>
   <div>
-  <%= form.label :image %>
-  <%= form.file_field :image %>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
   </div>
   <%= form.submit %>
 <% end %>

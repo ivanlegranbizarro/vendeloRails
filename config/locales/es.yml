@@ -12,12 +12,14 @@ es:
         description: "Descripción"
         price: "Precio"
         photo: "Foto"
+        category: "Categoría"
       user:
         email: "Correo electrónico"
         username: "Usuario"
         password: "Contraseña"
       category:
         name: "Nombre"
+        blank: "La categoría es obligatoria."
   common:
     confirm: "¿Estás seguro?"
     back: "Volver"
