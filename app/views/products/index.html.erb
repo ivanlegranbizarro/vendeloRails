@@ -1,3 +1,5 @@
-<h1><%= t('.title') %></h1>
-<%= render 'shared/category', var: @categories %>
-<%= render partial: 'shared/product', collection: @products %>
+<%= turbo_frame_tag 'categories' do %>
+  <h1><%= t('.title') %></h1>
+  <%= render 'shared/category', var: @categories %>
+  <%= render partial: 'shared/product', collection: @products %>
+<% end %>
