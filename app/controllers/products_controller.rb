@@ -1,11 +1,16 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: %i[show edit update destroy]
+
   def index
-    @products = Product.all.with_attached_image.order(created_at: :desc)
+    @categories = Category.order(name: :asc).load_async
+    @products = Product.all.with_attached_image.order(created_at: :desc).load_async
+
+    return unless params[:category_id].present?
+
+    @products = @products.where(category_id: params[:category_id])
   end
 
-  def show
-    product
-  end
+  def show; end
 
   def new
     @product = Product.new
@@ -20,12 +25,10 @@ class ProductsController < ApplicationController
     end
   end
 
-  def edit
-    product
-  end
+  def edit; end
 
   def update
-    if product.update(product_params)
+    if @product.update(product_params)
       redirect_to products_path, notice: t('.updated')
     else
       render :edit, status: :unprocessable_entity, notice: t('.not_updated')
@@ -33,8 +36,8 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product.destroy
-    if product.destroyed?
+    @product.destroy
+    if @product.destroyed?
       redirect_to products_path, notice: t('.deleted')
     else
       redirect_to products_path, status: :unprocessable_entity, alert: t('.not_deleted')
@@ -47,7 +50,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:title, :price, :description, :image, :category_id)
   end
 
-  def product
+  def set_product
     @product = Product.find(params[:id])
   end
 end
