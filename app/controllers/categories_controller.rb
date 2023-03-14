@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        flash[:notice] = 'Category was successfully created.'
+        flash[:notice] = t('.created')
         format.html { redirect_to categories_url }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -32,7 +32,7 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        flash[:notice] = 'Category was successfully updated.'
+        flash[:notice] = t('.updated')
         format.html { redirect_to categories_url }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -45,7 +45,7 @@ class CategoriesController < ApplicationController
     @category.destroy
 
     respond_to do |format|
-      flash[:notice] = 'Category was successfully destroyed.'
+      flash[:notice] = t('.destroyed')
       format.html { redirect_to categories_url }
     end
   end
