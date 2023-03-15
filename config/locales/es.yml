@@ -64,6 +64,9 @@ es:
       expensive: "Más caros"
       cheapest: "Más barato"
       newest: "Añadidos recientemente"
+      recientes: "Recientes"
+      mas_caros: "Más caros"
+      mas_baratos: "Más baratos"
     show:
       edit: "Editar producto"
       delete: "Borrar producto"
@@ -96,5 +99,5 @@ es:
       title: "Mis favoritos"
   user_mailer:
     welcome:
-      subject: "Bienvenido a Vendelo"
-      welcome_message: "Hey %{username}, bienvenid@ a Vendelo. Esperemos que vendas un montón!"
+      subject: "Bienvenido a Véndelo"
+      welcome_message: "Hey %{username}, bienvenid@ a Véndelo. Esperemos que puedas vender o comprar lo que necesites."

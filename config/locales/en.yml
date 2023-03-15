@@ -62,6 +62,9 @@ en:
       expensive: "Expensive first"
       cheapest: "Cheaper first"
       newest: "Recently added"
+      recent: "Recent"
+      most_expensive: "Most expensive"
+      least_expensive: "Least expensive"
     show:
       edit: "Edit product"
       delete: "Delete product"
