@@ -1,18 +1,26 @@
 class ProductsController < ApplicationController
   def index
     @categories = Category.order(name: :asc).load_async
-    @products = Product.all.with_attached_image.order(created_at: :desc).load_async
+    @products = Product.all.with_attached_image.load_async
 
     @products = @products.where(category_id: params[:category_id]) if params[:category_id]
     @products = @products.where('price >= ?', params[:min_price]) if params[:min_price].present?
-
     @products = @products.where('price <= ?', params[:max_price]) if params[:max_price].present?
 
     # Filtrar productos por nombre y descripción si el parámetro 'name' está presente
-    return unless params[:name].present?
+    if params[:name].present?
+      search_term = "%#{params[:name].downcase}%"
+      @products = @products.where('LOWER(title) LIKE ? OR LOWER(description) LIKE ?', search_term, search_term)
+    end
 
-    search_term = "%#{params[:name].downcase}%"
-    @products = @products.where('LOWER(title) LIKE ? OR LOWER(description) LIKE ?', search_term, search_term)
+    return unless params[:order_by].present?
+
+    orders = {
+      newest: 'created_at DESC',
+      expensive: 'price DESC',
+      cheapest: 'price ASC'
+    }.fetch(params[:order_by].to_sym, 'created_at DESC')
+    @products = @products.order(orders)
   end
 
   def show
