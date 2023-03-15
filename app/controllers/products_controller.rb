@@ -13,13 +13,11 @@ class ProductsController < ApplicationController
       @products = @products.where('LOWER(title) LIKE ? OR LOWER(description) LIKE ?', search_term, search_term)
     end
 
-    return unless params[:order_by].present?
-
     orders = {
       newest: 'created_at DESC',
       expensive: 'price DESC',
       cheapest: 'price ASC'
-    }.fetch(params[:order_by].to_sym, 'created_at DESC')
+    }.fetch(params[:order_by]&.to_sym, 'created_at DESC')
     @products = @products.order(orders)
   end
 
