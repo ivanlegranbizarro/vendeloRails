@@ -124,6 +124,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8-arm64-darwin)
       racc (~> 1.4)
+    pagy (6.0.2)
     prettier_print (1.2.1)
     public_suffix (5.0.0)
     puma (5.6.5)
@@ -220,6 +221,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  pagy (~> 6.0)
   puma (~> 5.0)
   rails (~> 7.0.4)
   ruby-lsp (~> 0.4.1)

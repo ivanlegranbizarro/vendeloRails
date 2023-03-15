@@ -72,3 +72,6 @@ group :test do
 end
 
 gem 'ruby-lsp', '~> 0.4.1', group: :development, require: false
+
+# Pagination
+gem 'pagy', '~> 6.0'
