@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @categories = Category.order(name: :asc).load_async
-    @products = Product.all.with_attached_image.load_async
+    @products = Product.all.with_attached_image
 
     @products = @products.where(category_id: params[:category_id]) if params[:category_id]
     @products = @products.where('price >= ?', params[:min_price]) if params[:min_price].present?
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
       expensive: 'price DESC',
       cheapest: 'price ASC'
     }.fetch(params[:order_by]&.to_sym, 'created_at DESC')
-    @products = @products.order(orders)
+    @products = @products.order(orders).load_async
   end
 
   def show
