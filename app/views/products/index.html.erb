@@ -9,5 +9,8 @@
      %>
   <% end %>
   <%= render 'shared/category', var: @categories %>
-  <%= render partial: 'shared/product', collection: @products %>
+  <%= turbo_frame_tag "products-#{@pagy.page}" do %>
+    <%= render partial: 'shared/product', collection: @products %>
+    <%= turbo_frame_tag "products-#{@pagy.next}", src: pagy_url_for(@pagy, @pagy.next), loading: :lazy if @pagy.next %>
+  <% end %>
 <% end %>
